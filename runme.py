@@ -8,7 +8,7 @@ print("Welcome to Python")
 print("This file is running with GitHub Actions")
 
 try:
-  if os.environ["GUESS"] == 42:
+  if os.environ["GUESS"] == "42":
     print("OS GUESS was correct")
   else:
     print("OS GUESS was wrong")
