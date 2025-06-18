@@ -28,8 +28,7 @@ jobs:
     - name: Test with python and 38 to fail
       run: |
         export GUESS=38
-        if python runme.py
-        then
+        if python runme.py; then
           echo "Failed"
           exit 1
         else
