@@ -19,9 +19,15 @@ jobs:
       with:
         node-version: 22.x
     - name: Install lint
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
     - run: |
         npm install eslint
     - name: Lint code
+      uses: actions/setup-node@v4
+      with:
+        node-version: 22.x
     - run: |
         npm run lint
     - name: Use Node.js 22.x
