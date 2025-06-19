@@ -71,6 +71,7 @@ jobs:
         then
           echo "Node failed"
         elif (( exitstate == 12 ))
+        then
           echo "Both failed"
         else
           echo "All OK"
@@ -78,4 +79,3 @@ jobs:
 
         exit $exitstate
         '
-        
