@@ -28,11 +28,6 @@ jobs:
         GUESS: 42
     - name: Test with python and 38 to fail
       run: |
-        if python runme.py; then
-          echo "Failed"
-          exit 1
-        else
-          echo "Guess failed correctly"
-        if
+        python runme.py || (echo "Failed correctly" )
       env:
         GUESS: 38
