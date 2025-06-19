@@ -25,7 +25,7 @@ jobs:
       run: |
         python runme.py
       env:
-        GUESS=42
+        GUESS: 42
     - name: Test with python and 38 to fail
       run: |
         if python runme.py; then
@@ -35,4 +35,4 @@ jobs:
           echo "Guess failed correctly"
         if
       env:
-        GUESS=38
+        GUESS: 38
