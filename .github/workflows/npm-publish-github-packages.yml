@@ -20,6 +20,7 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > github-ec2.pem && chmod 600 github-ec2.pem
         echo "ssh -o StrictHostKeyChecking=no -i github-ec2.pem ${USER}@${HOST}"
+
         ssh -o StrictHostKeyChecking=no -i github-ec2.pem ${USER}@${HOST} '
         echo "Current directory: $(pwd)"
         echo "Listing home directory:"
@@ -75,5 +76,5 @@ jobs:
         fi
 
         exit $exitstate
-      '
+        '
         
