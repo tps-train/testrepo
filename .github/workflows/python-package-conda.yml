@@ -1,6 +1,9 @@
 name: Test Python code
 
-on: [push]
+on:
+  push:
+    paths:
+      - '**/*.py'
 
 jobs:
   build-linux:
