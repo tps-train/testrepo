@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "lint": "eslint 'src/**/*.js?(x)'"
+    "lint": "eslint '*.js?(x)'"
   }
 }
