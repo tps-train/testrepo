@@ -15,8 +15,6 @@ jobs:
         PRIVATE_KEY: ${{ secrets.EC2_PRIVATE_KEY }}
         HOST: ${{ secrets.EC2_HOST }}
         USER: ${{ secrets.EC2_USER }}
-        REPO_URL: https://github.com/tps-train/testrepo.git
-        GUESS: 42
       run: |
         echo "$PRIVATE_KEY" > github-ec2.pem && chmod 600 github-ec2.pem
         echo "ssh -o StrictHostKeyChecking=no -i github-ec2.pem ${USER}@${HOST}"
@@ -38,6 +36,7 @@ jobs:
         nvm install node
 
         # Clone our app repo
+        REPO_URL="https://github.com/tps-train/testrepo.git"
         REPO_DIR="$HOME/testrepo"
 
         if [ -d "$REPO_DIR/.git" ]; then
@@ -48,6 +47,9 @@ jobs:
           git clone "${REPO_URL}" "$REPO_DIR"
           cd "$REPO_DIR"
         fi
+
+        # Variable for application
+        export GUESS=42
 
         exitstate=0
         echo "Testing the Python applications"
