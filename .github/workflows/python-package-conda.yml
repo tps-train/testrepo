@@ -22,13 +22,11 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with python and 42
-      env:
-        GUESS=42
       run: |
         python runme.py
-    - name: Test with python and 38 to fail
       env:
-        GUESS=38
+        GUESS=42
+    - name: Test with python and 38 to fail
       run: |
         if python runme.py; then
           echo "Failed"
@@ -36,3 +34,5 @@ jobs:
         else
           echo "Guess failed correctly"
         if
+      env:
+        GUESS=38
