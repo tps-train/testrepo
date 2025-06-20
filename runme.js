@@ -1,4 +1,5 @@
 // Node app for testing
+// For demo purposes
 
 let exitstate = 0
 
